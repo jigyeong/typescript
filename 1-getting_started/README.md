@@ -10,7 +10,7 @@ tsc index.ts
 ```
 
 3. make tsconfig.json
-```
+```javascript
 {
     "compilerOptions": {
         "allowJs": true, // 자바스크립트 허용
