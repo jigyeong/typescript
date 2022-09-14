@@ -4,9 +4,9 @@ function sum(a: number, b: number) : number{
 
 sum(3,4);
 
-function log(a: string, b?: string, c?: string) {
+function log2(a: string, b?: string, c?: string) {
     //b,c 는 옵션임
 }
 
-log('aa');
-log('aa', 'bb');
+log2('aa');
+log2('aa', 'bb');
