@@ -72,3 +72,28 @@ let user: Developer = {
     language: 'ts'
 }
 ```
+
+> Union, Intersection Type
+```javascript
+interface Person {
+    name : string;
+    age: number;
+}
+
+interface Developer extends Person {
+    language: string;
+}
+
+interface User {
+    name : string;
+    type: string;
+}
+
+function F(someone: Developer | User){
+    someone.type // (error)공통파라미터가 아니면 사용 불가
+}
+
+function F2(someone: Developer & User){
+    someone.type // 공통파라미터가 아니어도 사용 가능
+}
+```
