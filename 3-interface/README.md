@@ -97,3 +97,22 @@ function F2(someone: Developer & User){
     someone.type // 공통파라미터가 아니어도 사용 가능
 }
 ```
+
+> Enum :
+필요한 데이터 정의해서 사용
+```javascript
+enum Answer{
+    Yes ='Y',
+    No='N'
+}
+
+function askQuestion(answer: Answer){
+    if(answer===Answer.Yes){
+
+    }
+    if(answer===Answer.No){
+
+    }
+}
+askQuestion(Answer.No)
+```

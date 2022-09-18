@@ -48,3 +48,18 @@ function F(someone: Developer | User){
 function F2(someone: Developer & User){
     someone.type // 공통파라미터가 아니어도 사용 가능
 }
+
+enum Answer{
+    Yes ='Y',
+    No='N'
+}
+
+function askQuestion(answer: Answer){
+    if(answer===Answer.Yes){
+
+    }
+    if(answer===Answer.No){
+
+    }
+}
+askQuestion(Answer.No)
