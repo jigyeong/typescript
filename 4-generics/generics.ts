@@ -3,7 +3,7 @@ function loggingOnlyTwoType(text: string | number){
     console.log(text);
     return text;
 }
-loggingOnlyTwoType(text).split(''); // number type 일 수도 있어 Error 발생
+//loggingOnlyTwoType(text).split(''); // number type 일 수도 있어 Error 발생
 
 // generics
 function logging<T>(text: T):T {
