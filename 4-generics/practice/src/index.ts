@@ -9,6 +9,11 @@ interface PhoneNumberDictionary {
     address: string;
     phones: PhoneNumberDictionary;
   }
+
+  enum PhoneType {
+    Home = 'home',
+    Office = 'office'
+  }
   
   // api
   function fetchContacts():Promise<Contact[]> {
@@ -54,42 +59,41 @@ interface PhoneNumberDictionary {
   
   // main
   class AddressBook {
-    private contacts:Contact[];
+    contacts:Contact[] = [];
   
-    constructor() {
-        this.contacts = [];
+    constructor() { // constructor 는 타입정의 X
         this.fetchData();
     }
   
-    fetchData() {
+    fetchData():void {
       fetchContacts().then(response => {
         this.contacts = response;
       });
     }
   
-    findContactByName(name: string) {
+    findContactByName(name: string):Contact[] {
       return this.contacts.filter(contact => contact.name === name);
     }
   
-    findContactByAddress(address: string) {
+    findContactByAddress(address: string):Contact[] {
       return this.contacts.filter(contact => contact.address === address);
     }
   
-    findContactByPhone(phoneNumber: number, phoneType: string) {
+    findContactByPhone(phoneNumber: number, phoneType: PhoneType):Contact[] {
       return this.contacts.filter(
         contact => contact.phones[phoneType].num === phoneNumber
       );
     }
   
-    addContact(contact:Contact) {
+    addContact(contact:Contact): void {
       this.contacts.push(contact);
     }
   
-    displayListByName() {
+    displayListByName(): string[] {
       return this.contacts.map(contact => contact.name);
     }
   
-    displayListByAddress() {
+    displayListByAddress(): string[] {
       return this.contacts.map(contact => contact.address);
     }
     /* ------------------------------------------------ */
