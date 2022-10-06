@@ -40,7 +40,24 @@ let arr = [1,2,true,'string']
 // <- arr2 type = arr type
 let arr2 = arr as string[];
 
-let div = document.querySelector('div')
-if(div) {
-    
+
+// Type Guard
+interface Developer {
+    name : string;
+    skill : string;
+}
+
+interface Person {
+    name : string;
+    age : number;
+}
+
+function isDeveloper(target : Developer | Person) : target is Developer{
+    return (target as Developer).skill !== undefined; // Developer 인지 아닌지 Return
+}
+
+let user = {name : "dev", skill:"java", age:5}
+
+if(isDeveloper(user)){
+    console.log(user.skill)
 }
