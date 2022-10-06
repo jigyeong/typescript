@@ -100,3 +100,16 @@ interface PhoneNumberDictionary {
   }
   
   new AddressBook();
+
+  // (1)
+  let div = document.querySelector('div')
+  // (1-1)
+  if(div){
+    div.innerHTML;
+  }
+  //(1-2)
+  div?.innerHTML;
+
+  // (2)
+  let div2 = document.querySelector('div') as HTMLDivElement;
+  div2.innerHTML;

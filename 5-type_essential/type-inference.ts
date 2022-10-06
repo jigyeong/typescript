@@ -30,3 +30,17 @@ let detailedItem:DetailedDropdown<number> = {
 
 // (string | number | boolean)[]
 let arr = [1,2,true,'string']
+
+/** 
+ * 
+ * ## type assertion 
+ * 
+ * */
+// arr2 = arr 
+// <- arr2 type = arr type
+let arr2 = arr as string[];
+
+let div = document.querySelector('div')
+if(div) {
+    
+}
