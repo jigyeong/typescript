@@ -1,20 +1,5 @@
-interface PhoneNumberDictionary {
-    [phone: string]: {
-      num: number;
-    };
-  }
-  
-  interface Contact {
-    name: string;
-    address: string;
-    phones: PhoneNumberDictionary;
-  }
+import { Contact, PhoneType } from './types'
 
-  enum PhoneType {
-    Home = 'home',
-    Office = 'office'
-  }
-  
   // api
   function fetchContacts():Promise<Contact[]> {
     const contacts:Contact[] = [
